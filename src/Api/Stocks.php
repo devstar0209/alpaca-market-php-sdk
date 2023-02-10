@@ -26,7 +26,7 @@ class Stocks
      * 
      * @return array
      */
-    public function historicalBars($symbol, $params=[])
+    public function historicalBars($symbol, $params)
     {
         $params['symbol'] = $symbol;
         return $this->alpaca->request('stocks_bars', $params)->contents();
