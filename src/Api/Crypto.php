@@ -5,7 +5,7 @@ use Alpaca\Market\Alpaca;
 class Crypto
 {
     /**
-     * @var \Alpaca\Alpaca
+     * @var \Alpaca\Market\Alpaca
      */
     protected $alpaca;
 
