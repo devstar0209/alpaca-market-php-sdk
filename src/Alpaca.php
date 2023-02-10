@@ -52,12 +52,12 @@ class Alpaca
     ];
 
     /**
-     * @var \Alpaca\Api\Stocks
+     * @var \Alpaca\Market\Api\Stocks
      */
     public $stocks;
 
     /**
-     * @var \Alpaca\Api\Crypto
+     * @var \Alpaca\Market\Api\Crypto
      */
     public $crypto;
 
