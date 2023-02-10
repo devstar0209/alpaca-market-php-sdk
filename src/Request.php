@@ -40,10 +40,10 @@ class Request
      *
      * @return \Alpaca\Market\Response
      */
-    public function send($handle, $params = [], $type = 'GET')
+    public function send($handle, $params = [], $pathParams = [])
     {
         // build and prepare our full path rul
-        $url = $this->prepareUrl($handle, $params);
+        $url = $this->prepareUrl($handle, $pathParams);
 
         // lets track how long it takes for this request
         $seconds = 0;
@@ -52,7 +52,7 @@ class Request
 
         try {
             // push request
-            $request = $this->client->request($type, $url, [
+            $request = $this->client->request('GET', $url, [
                 'query' => $params,
                 'headers' => [
                     'Authorization' => 'Basic '.$auth,
@@ -92,7 +92,6 @@ class Request
         foreach($segments as $segment=>$value) {
             if (gettype($value) == 'string') {
                 $url = str_replace('{'.$segment.'}', $value, $url);
-                $url = str_replace(':'.$segment, $value, $url);
             }
         }
 

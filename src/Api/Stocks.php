@@ -28,8 +28,7 @@ class Stocks
      */
     public function historicalBars($symbol, $params)
     {
-        $params['symbol'] = $symbol;
-        return $this->alpaca->request('stocks_bars', $params)->contents();
+        return $this->alpaca->request('stocks_bars', $params, ['symbol' => $symbol])->contents();
     }
 
 }

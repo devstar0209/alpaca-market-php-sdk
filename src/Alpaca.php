@@ -129,8 +129,8 @@ class Alpaca
      *
      * @return \Alpaca\Response
      */
-    public function request($handle, $params = [], $type = 'GET')
+    public function request($handle, $params = [], $pathParams = [])
     {
-        return (new Request($this))->send($handle, $params, $type);
+        return (new Request($this))->send($handle, $params, $pathParams);
     }
 }
