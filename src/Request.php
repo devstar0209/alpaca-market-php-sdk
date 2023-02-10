@@ -38,7 +38,7 @@ class Request
      *
      * Send request
      *
-     * @return \Alpaca\Response
+     * @return \Alpaca\Market\Response
      */
     public function send($handle, $params = [], $type = 'GET')
     {
@@ -53,10 +53,8 @@ class Request
         try {
             // push request
             $request = $this->client->request($type, $url, [
-                'json' => $params,
+                'query' => $params,
                 'headers' => [
-                    'Content-Type' => 'application/json',
-                    'Accept' => 'application/json',
                     'Authorization' => 'Basic '.$auth,
                 ],
                 'on_stats' => function (\GuzzleHttp\TransferStats $stats) use (&$seconds) {
