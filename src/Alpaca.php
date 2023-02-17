@@ -49,6 +49,7 @@ class Alpaca
      */
     private $paths = [
         "stocks_bars"     => "v2/stocks/{symbol}/bars",
+        "crypto_bars"     => "v1beta2/crypto/bars",
     ];
 
     /**
