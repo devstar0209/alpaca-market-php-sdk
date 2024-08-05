@@ -31,4 +31,17 @@ class Stocks
         return $this->alpaca->request('stocks_bars', $params, ['symbol' => $symbol])->contents();
     }
 
+    /**
+     * The Bars API returns aggregate latest data for the requested security over a specified time period.
+     * 
+     * @param string $symbol
+     * @param JSON $params
+     * 
+     * @return array
+     */
+    public function latestBars($params)
+    {
+        return $this->alpaca->request('stocks_latest_bars', $params)->contents();
+    }
+
 }
